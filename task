@@ -1,0 +1,47 @@
+class Calculator {
+
+  constructor(x,y) {
+   if(isFinite(x) == false || isFinite(y) == false) {
+    throw 'Число должно быть валидным!';
+   } else {
+    this.x = x,
+    this.y = y
+   }
+  }
+    
+  setX() {
+      return this.x;
+  }
+  
+  setY() {
+       return this.y;
+  }
+
+  logSum() {
+    return (this.x + this.y);
+  }
+
+  logMul() {
+    return (this.x * this.y);
+  }
+
+  logSub() {
+    return (this.x - this.y);
+  }
+
+  logDiv() {
+    if ( this.y === 0) {
+       throw 'На 0 делить нельзя!' 
+    } else {
+      return (+(this.x/this.y).toFixed(1));
+    }
+
+  }
+}
+
+let first = new Calculator(5,3)
+console.log(first)
+console.log(first.logSum())
+console.log(first.logMul())
+console.log(first.logSub())
+console.log(first.logDiv())
